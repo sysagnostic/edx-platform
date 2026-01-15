@@ -36,7 +36,7 @@ export default class Main extends React.Component {
 
     render() {
         const { selectedBlock, onSelectBlock } = this.props;
-        let selectorType = <Button onClick={this.handleToggleDropdown} label={gettext('Select a section or problem')} />;
+        let selectorType = <Button onClick={this.handleToggleDropdown}>{gettext('Select a section or problem')}</Button>;
         // eslint-disable-next-line react/prop-types
         if (this.props.showBtnUi === 'false') {
             selectorType = (
@@ -45,7 +45,7 @@ export default class Main extends React.Component {
                     onClick={this.handleToggleDropdown}
                     className={['problem-selector']}
                 >
-                    <span>{selectedBlock || 'Select a section or problem'}</span>
+                    <span>{selectedBlock || gettext('Select a section or problem')}</span>
                     <span className={['pull-right']}>
                         <Icon
                             className={['fa', 'fa-sort']}
@@ -79,8 +79,7 @@ export default class Main extends React.Component {
                     <Button
                         onClick={this.initiateReportGeneration}
                         name="list-problem-responses-csv"
-                        label={gettext('Create a report of problem responses')}
-                    />
+                    >{gettext('Create a report of problem responses')}</Button>
                     <ReportStatusContainer />
                 </div>
 
